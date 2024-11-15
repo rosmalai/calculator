@@ -12,15 +12,18 @@ function App() {
 
   function clear() {
     setResult(0);
-    setInput(null);
+    setInput(" ");
   }
 
   function handleClick (e) {
-    const target = e.target.name;
+    const target = e.target.className;
+    setInput(input + target);
   }
 
   function equalTo(){
-    
+    let opt = e.target.className;
+    setResult(result);
+    setInput(result);
   }
   
 
@@ -49,28 +52,28 @@ function App() {
         
         <div className='buttonBox' style={{}}>
                 
-                <Button className='7' label={7} style={{ margin: "4px" }}></Button>
-                <Button className='8' label={8} style={{margin:"4px"}}></Button>
-                <Button className='9' label={9} style={{margin:"4px"}}></Button>
+                <Button className='7' onClick={handleClick} label={7} style={{ margin: "4px" }}></Button>
+                <Button className='8' onClick={handleClick} label={8} style={{margin:"4px"}}></Button>
+                <Button className='9' onClick={handleClick} label={9} style={{margin:"4px"}}></Button>
                 <Button className='+' onClick={handleClick} label={"+"} style={{margin:"4px"}}></Button>
                 
 
-                <Button className='4' label={4} style={{margin:"4px"}}></Button>
-                <Button className='5' label={5} style={{ margin: "4px" }}></Button>
-                <Button className='6' label={6} style={{ margin: "4px" }}></Button>
-                <Button className='-' label={"-"} style={{margin:"4px"}}></Button>
+                <Button className='4' onClick={handleClick} label={4} style={{margin:"4px"}}></Button>
+                <Button className='5' onClick={handleClick} label={5} style={{ margin: "4px" }}></Button>
+                <Button className='6' onClick={handleClick} label={6} style={{ margin: "4px" }}></Button>
+                <Button className='-' onClick={handleClick} label={"-"} style={{margin:"4px"}}></Button>
                 
                 
-                <Button className='1' label={1} style={{ margin: "4px" }}></Button>
-                <Button className='2' label={2} style={{margin:"4px"}}></Button>
-                <Button className='3' label={3} style={{margin:"4px"}}></Button>
-                <Button className='*' label={"*"} style={{margin:"4px"}}></Button>
+                <Button className='1' onClick={handleClick} label={1} style={{ margin: "4px" }}></Button>
+                <Button className='2' onClick={handleClick} label={2} style={{margin:"4px"}}></Button>
+                <Button className='3' onClick={handleClick} label={3} style={{margin:"4px"}}></Button>
+                <Button className='*' onClick={handleClick} label={"*"} style={{margin:"4px"}}></Button>
                 
 
                 <Button className='C' onClick={clear} label={"C"} style={{margin:"4px"}}></Button>
-                <Button className='0' label={0} style={{margin:"4px"}}></Button>
+                <Button className='0' onClick={handleClick} label={0} style={{margin:"4px"}}></Button>
                 <Button className='=' onClick={equalTo} label={"="} style={{margin:"4px"}}></Button>
-                <Button className='/' label={"/"} style={{margin:"4px"}}></Button>
+                <Button className='/' onClick={handleClick} label={"/"} style={{margin:"4px"}}></Button>
                 
         </div>
       </div>
